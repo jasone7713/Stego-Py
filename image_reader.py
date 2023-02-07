@@ -86,7 +86,6 @@ def embed(img, msg, channel = 0):
     counter = 0
     index_in_msg = 0
 
-    print('The offset used to embed: ', offset)
     #iterate through every pixel in image
     for i in range(1, rows): #skip first row -> that's where I am storing information
         for j in range(cols):
@@ -126,8 +125,6 @@ def decode(img):
     counter = 0
     msg = ''
     terminated = False
-
-    print('The offset used to decode: ', offset)
 
     #iterate through every pixel in image
     for i in range(1, rows):
