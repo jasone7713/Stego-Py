@@ -9,8 +9,23 @@ def are_images_equal(img1, img2):
         return False
     return np.all(img1 == img2)
 
-dir = os.path.join('C:\\Users\\drago\\OneDrive\\Desktop\\Steg\\biden.jpg')
+def read_file(name):
+    with open(os.path.join(name), 'r') as file:
+        return file.read()
 
+test_cases = ['biden.jpg', 'test.jpg', 'forest.png']
+messages = [read_file('declaration.txt'), '', 'abcdefghijklmnopqrstuvwxyz', '12345678910~!@#$%^&*()_+<>?:"|']
+images_dir = 'test_images'
+
+for case in test_cases:
+    print('Test case: ', case)
+    for msg in messages:
+        filepath = os.path.join(images_dir)
+        print(filepath)
+        img = cv2.imread(filepath)
+
+
+"""
 with open('declaration.txt', 'r') as file:
     m3 = file.read().replace('\n', '')
 
@@ -24,3 +39,4 @@ cv2.imwrite('biden-encoded.png', biden)
 biden_encoded = cv2.imread('C:\\Users\\drago\\OneDrive\\Desktop\\Steg\\biden-encoded.png')
 print(reader.decode(biden))
 
+"""
