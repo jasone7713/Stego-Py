@@ -117,6 +117,8 @@ def read_offset(pixel):
 
 def decode(img):
     rows,cols,_ = img.shape
+
+    #used to keep record of the original image and pixel values
     reference_img = img
 
     pixel = img[0, 0]
@@ -131,7 +133,7 @@ def decode(img):
 
         #break when end of message reached
         if terminated:
-                break
+            break
 
         for j in range(cols):
             #change the pixel value on every nth pixel
